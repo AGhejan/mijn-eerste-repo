@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Document</title>
+</head>
+<body>
+	<video autoplay muted loop id="myVideo">
+  		<source src="video/strawbery.mp4" type="video/mp4">
+	</video>
+	<header class="header cf">		
+		<div class="content">
+			<div class="logo">
+				LOGO
+			</div>
+			<div class="navigatie">
+				HOME DIENSTEN
+			</div>
+		</div>
+	</header>
+	
+	<div class="maincontent cf">
+		<div class="container">
+			<!-- <div class="slide">
+				<img class="my_slides" src="image/image1.jfif">
+				<img class="my_slides" src="image/image2.jfif">
+				<img class="my_slides" src="image/image3.jfif">
+				<img class="my_slides" src="image/image4.jfif">
+				<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+				<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+			</div> -->
+			<div class="content">
+				<div class="row">
+				  <div class="column">
+				    <img src="image/image1.jfif" onclick="openModal();currentSlide(1)" class="hover-shadow">
+				  </div>
+				  <div class="column">
+				    <img src="image/image2.jfif" onclick="openModal();currentSlide(2)" class="hover-shadow">
+				  </div>
+				  <div class="column">
+				    <img src="image/image3.jfif" onclick="openModal();currentSlide(3)" class="hover-shadow">
+				  </div>
+				  <div class="column">
+				    <img src="image/image4.jfif" onclick="openModal();currentSlide(4)" class="hover-shadow">
+				  </div>
+			</div>
+			<div id="myModal" class="modal">
+				  <span class="close cursor" onclick="closeModal()">&times;</span>
+				  <div class="modal-content">
+
+				    <div class="mySlides">
+				      <div class="numbertext">1 / 4</div>
+				      <img src="image/image1.jfif" style="width:80%">
+				    </div>
+
+				    <div class="mySlides">
+				      <div class="numbertext">2 / 4</div>
+				      <img src="image/image2.jfif" style="width:80%">
+				    </div>
+
+				    <div class="mySlides">
+				      <div class="numbertext">3 / 4</div>
+				      <img src="image/image3.jfif" style="width:80%">
+				    </div>
+
+				    <div class="mySlides">
+				      <div class="numbertext">4 / 4</div>
+				      <img src="image/image4.jfif" style="width:80%">
+				    </div>
+				   </div>
+			</div>
+			<!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail image controls -->
+    <div class="column">
+      <img class="demo" src="image/image1.jfif" onclick="currentSlide(1)" alt="Cup-cake1">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="image/image2.jfif" onclick="currentSlide(2)" alt="Cups">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="image/image3.jfif" onclick="currentSlide(3)" alt="Cup-cake2">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="image/image4.jfif" onclick="currentSlide(4)" alt="Strawberry">
+    </div>
+  </div>
+</div>
+	</div>
+
+	<div class="footer">
+		<div class="container">
+			<div class="blokooter">
+				Copyright 2021
+			</div>
+		</div>
+	</div>
+
+<!-- <script type="text/javascript">
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("my_slides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+</script> -->
+
+<script>
+// Open the Modal
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+</body>
+</html>
